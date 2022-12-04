@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.quarkus.mongodb.panache.common.MongoEntity;
+import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoEntity;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -37,7 +38,7 @@ import io.quarkus.mongodb.panache.common.MongoEntity;
 })
 @Generated("jsonschema2pojo")
 @MongoEntity(collection = "Pokecards")
-public class Card {
+public class Card extends ReactivePanacheMongoEntity {
 
 @JsonProperty("_id")
 private ObjectId id;

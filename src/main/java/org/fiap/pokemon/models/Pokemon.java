@@ -1,14 +1,14 @@
 package org.fiap.pokemon.models;
 
-import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
+import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoEntity;
 
 import org.bson.types.ObjectId;
 
 import java.util.List;
 
 @MongoEntity(collection = "Pokemon")
-public class Pokemon extends PanacheMongoEntity {
+public class Pokemon extends ReactivePanacheMongoEntity {
     public ObjectId id;
     private String pokemonId;
     private String name;

@@ -3,8 +3,8 @@ package org.fiap.cards.controllers;
 import org.fiap.cards.models.Card;
 import org.fiap.cards.repositories.CardRepository;
 
-import io.quarkus.mongodb.panache.PanacheQuery;
 import io.quarkus.mongodb.panache.common.MongoEntity;
+
 import org.bson.types.ObjectId;
 
 import javax.inject.Inject;
@@ -56,4 +56,3 @@ public class CardController {
         cardRepository.deleteById(new ObjectId(id));
     }
 }
-
