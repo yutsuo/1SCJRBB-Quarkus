@@ -1,8 +1,11 @@
-package org.fiap;
+package org.fiap.pokemon.controllers;
 
-import org.fiap.Pokemon;
-import org.fiap.PokemonRepository;
+import org.fiap.pokemon.models.Pokemon;
+import org.fiap.pokemon.repositories.PokemonRepository;
+
 import io.quarkus.mongodb.panache.PanacheQuery;
+import io.quarkus.mongodb.panache.common.MongoEntity;
+
 import org.bson.types.ObjectId;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -10,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+@MongoEntity(collection = "Pokemon")
 @Path("/pokemon")
 public class PokemonController {
     private final PokemonRepository pokemonRepository;
