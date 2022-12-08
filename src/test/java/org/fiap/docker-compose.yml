@@ -1,0 +1,7 @@
+---
+services:
+  quarkus:
+    container_name: quarkus
+    build:
+      context: .
+      dockerfile: /src/main/docker/Dockerfile.jvm

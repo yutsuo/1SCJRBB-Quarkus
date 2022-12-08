@@ -3,7 +3,6 @@ package org.fiap.pokemon.controllers;
 import org.fiap.pokemon.models.Pokemon;
 import org.fiap.pokemon.repositories.PokemonRepository;
 
-import io.quarkus.mongodb.panache.PanacheQuery;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
 import org.bson.types.ObjectId;
