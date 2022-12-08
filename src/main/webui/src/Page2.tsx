@@ -11,7 +11,7 @@ function Page2() {
         Go to Page 1
       </ButtonLink>
       <Pokecard />
-      <Holeryuno />
+      {/* <Holeryuno /> */}
     </Container>
   );
 }

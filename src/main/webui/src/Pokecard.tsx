@@ -5,6 +5,7 @@ function BasicExample() {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="https://images.pokemontcg.io/base1/1.png" />
+      {/* <Card.Img variant="top" src="holder.js/280x330" /> */}
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
