@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import ButtonLink from './ButtonLink';
 import Pokecard from './Pokecard';
 import Holeryuno from './Holeryuno';
+import List from './List';
+import Fetch from './Fetch';
 
 function Page2() {
   return (
@@ -10,8 +12,10 @@ function Page2() {
       <ButtonLink to="/" variant="danger">
         Go to Page 1
       </ButtonLink>
-      <Pokecard />
+      {/* <Pokecard /> */}
       {/* <Holeryuno /> */}
+      {/* <List /> */}
+      <Fetch />
     </Container>
   );
 }
