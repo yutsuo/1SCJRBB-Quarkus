@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import ButtonLink from './ButtonLink';
 import Pokecard from './Pokecard';
+import Holeryuno from './Holeryuno';
 
 function Page2() {
   return (
@@ -10,6 +11,7 @@ function Page2() {
         Go to Page 1
       </ButtonLink>
       <Pokecard />
+      <Holeryuno />
     </Container>
   );
 }
