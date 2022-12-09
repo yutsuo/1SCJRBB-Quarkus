@@ -28,31 +28,40 @@ public class CardController {
         return cardRepository.listAll();
     }
 
+    // @GET
+    // @Path("/{id}")
+    // @Produces(MediaType.APPLICATION_JSON)
+    // public Card getPokeCard(@PathParam("id") String id) {
+    //     return cardRepository.findById(new ObjectId(id));
+    // }
+
+    // @PUT
+    // @Path("/{id}")
+    // @Consumes(MediaType.APPLICATION_JSON)
+    // @Produces(MediaType.APPLICATION_JSON)
+    // public void updatePokemon(@PathParam("id") String id, Card pokeCard) {
+    //     pokeCard.setId(new ObjectId(id));
+    //     cardRepository.update(pokeCard);
+    // }
+
+    // @POST
+    // public Response createPokeCard(Card pokeCard) {
+    //     cardRepository.persist(pokeCard);
+    //     return Response.ok(pokeCard).status(201).build();
+    // }
+
+    // @DELETE
+    // @Path("/{id}")
+    // public void deletePokeCard(@PathParam("id") String id) {
+    //     cardRepository.deleteById(new ObjectId(id));
+    // }
+
     @GET
-    @Path("/{id}")
+    @Path("/{cardId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Card getPokeCard(@PathParam("id") String id) {
-        return cardRepository.findById(new ObjectId(id));
+    public Card getPokeCardByCardId(@PathParam("cardId") String cardId) {
+        // return cardRepository.findById(cardId);
+        return cardRepository.find("cardId", cardId).firstResult();
     }
 
-    @PUT
-    @Path("/{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public void updatePokemon(@PathParam("id") String id, Card pokeCard) {
-        pokeCard.setId(new ObjectId(id));
-        cardRepository.update(pokeCard);
-    }
-
-    @POST
-    public Response createPokeCard(Card pokeCard) {
-        cardRepository.persist(pokeCard);
-        return Response.ok(pokeCard).status(201).build();
-    }
-
-    @DELETE
-    @Path("/{id}")
-    public void deletePokeCard(@PathParam("id") String id) {
-        cardRepository.deleteById(new ObjectId(id));
-    }
 }

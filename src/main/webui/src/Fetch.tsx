@@ -7,10 +7,10 @@ export default function App() {
   const [error, setError] = useState(null);
  
   useEffect(() => {
-    fetch(`http://localhost:8000/cards`)
+    fetch(`http://localhost:8080/card`)
       .then(response => response.json())
       .then((usefulData) => {
-        console.log(usefulData[0]);
+        console.log(usefulData);
         setLoading(false);
         setData(usefulData);
       })
