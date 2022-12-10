@@ -1,19 +1,17 @@
-import { useState, useEffect } from "react";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import cardBack from './card-back.png';
 
-function PokeCard() {
+function PokeCard(props: any) {
 
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={cardBack} />
+      <Card.Img variant="top" src={props.image} />
       <Card.Body>
-        <Card.Title>Pokémon Name</Card.Title>
+        <Card.Title>{props.name}</Card.Title>
         <Card.Text>
-          Pokemon Flavor Text
+        {props.flavorText}
         </Card.Text>
-        <p>Rarity</p>
+        <p>{props.rarity}</p>
       </Card.Body>
     </Card>
   );
