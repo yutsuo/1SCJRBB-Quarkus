@@ -12,10 +12,10 @@ function Page2() {
       <ButtonLink to="/" variant="danger">
         Go to Page 1
       </ButtonLink>
-      {/* <Pokecard /> */}
+      <Pokecard />
       {/* <Holeryuno /> */}
       {/* <List /> */}
-      <Fetch />
+      {/* <Fetch /> */}
     </Container>
   );
 }

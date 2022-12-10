@@ -57,11 +57,17 @@ public class CardController {
     // }
 
     @GET
-    @Path("/{cardId}")
+    @Path("/id/{cardId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Card getPokeCardByCardId(@PathParam("cardId") String cardId) {
-        // return cardRepository.findById(cardId);
         return cardRepository.find("cardId", cardId).firstResult();
+    }
+
+    @GET
+    @Path("/{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Card getPokeCardByName(@PathParam("name") String name) {
+        return cardRepository.find("name", name).firstResult();
     }
 
 }
