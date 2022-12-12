@@ -12,7 +12,7 @@ services:
 
   seed:
     container_name: seed
-    build: .\database
+    build: ./database
     links:
       - mongodb
 
