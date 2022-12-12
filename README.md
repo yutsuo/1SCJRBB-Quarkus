@@ -1,60 +1,49 @@
-# code-with-quarkus Project
+# 1SCJRBB-Quarkus
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## Trabalho final da Disciplina Quarkus
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+### Descrição
 
-## Running the application in dev mode
+Para o trabalho final da disciplina Quarkus, desenvolvemos um sistema básico de consulta de cards do jogo Pokémon: TCG.
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./gradlew quarkusDev
-```
+![Frontend](./tela.png "Frontend")
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+O Quarkus ficou com a parte de backend E frontend, graças à lib Quinoa, feita para permitir a subida de uma aplicação frontend feita em Javascript, HTML e CSS carregada diretamente junto com com o pacote Java.
 
-## Packaging and running the application
+Tecnologias utilizadas:
 
-The application can be packaged using:
-```shell script
-./gradlew build
-```
-It produces the `quarkus-run.jar` file in the `build/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `build/quarkus-app/lib/` directory.
+- Docker
+- NodeJS
+- MongoDB
+- Quarkus
+  - Quinoa
+  - Panache(MongoDB)
+  - RESTeasy Reactive
 
-The application is now runnable using `java -jar build/quarkus-app/quarkus-run.jar`.
+### Instruções para subir o projeto
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./gradlew build -Dquarkus.package.type=uber-jar
-```
+É necessário que você tenha o Docker e o Docker Compose instalados e funcionando. Você também precisa do Quarkus. O projeto foi construído com o Java 17.
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar build/*-runner.jar`.
+1- clonar o Repositório
 
-## Creating a native executable
+2- cavegar até a raiz do projeto
 
-You can create a native executable using: 
-```shell script
-./gradlew build -Dquarkus.package.type=native
-```
+3- execute o script ```build-and-run.sh``` se estiver no Linux, ou ```build-and-run.ps1``` se estiver no Windows.
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true
-```
+4- aguarde a subida dos serviços
 
-You can then execute your native executable with: `./build/code-with-quarkus-1.0.0-SNAPSHOT-runner`
+5- com os serviços funcionando, navegue para a URL ```http://localhost:8080/```. Você verá a SPA do projeto.
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/gradle-tooling.
+6- o uso é simples, basta escrever o nome do card que deseja consultar e clicar na Lupa 🔎️.
 
-## Related Guides
+7- Você pode interromper o funcionamento com o comando ```docker-compose down``` na raiz do projeto.
 
-- MongoDB with Panache ([guide](https://quarkus.io/guides/mongodb-panache)): Simplify your persistence code for MongoDB via the active record or the repository pattern
+## Equipe
 
-## Provided Code
+Carlos Mateus Borges Junior - RM344974
 
-### RESTEasy Reactive
+Daniel de Oliveira Carvalho - RM344795
 
-Easily start your Reactive RESTful Web Services
+Pedro Sant Anna Lima Oliveira - RM344804
 
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+Willian Prestes Correia Cellos - RM344812
