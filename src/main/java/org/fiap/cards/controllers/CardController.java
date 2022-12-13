@@ -3,6 +3,9 @@ package org.fiap.cards.controllers;
 import org.fiap.cards.models.Card;
 import org.fiap.cards.repositories.CardRepository;
 
+import com.mongodb.client.model.Collation;
+import com.mongodb.client.model.CollationStrength;
+
 import io.quarkus.mongodb.panache.common.MongoEntity;
 
 import org.bson.types.ObjectId;
@@ -63,11 +66,15 @@ public class CardController {
         return cardRepository.find("cardId", cardId).firstResult();
     }
 
+    public Collation getCollation() {
+        return Collation.builder().locale("en").collationStrength(CollationStrength.SECONDARY).build();
+    }
+
     @GET
     @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Card getPokeCardByName(@PathParam("name") String name) {
-        return cardRepository.find("name", name).firstResult();
+        return cardRepository.find("name", name).withCollation(getCollation()).firstResult();
     }
 
 }
